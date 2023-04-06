@@ -25,13 +25,15 @@ public class FullView extends AppCompatActivity {
         if(intent != null) {
             String name ="" , desc ="", date ="";
             name = intent.getStringExtra("name");
-//            desc = intent.getStringExtra("description");
+            desc = intent.getStringExtra("description");
             date = intent.getStringExtra("date");
             earthQuakeItem.setDate(date);
             earthQuakeItem.setName(name);
+            earthQuakeItem.setDescription(desc);
 
             nameView.setText(name);
             dateView.setText(date);
+            descriptionView.setText(desc);
 
             // Make the name on the toolbar, the same name as item selected
             getSupportActionBar().setTitle(name);

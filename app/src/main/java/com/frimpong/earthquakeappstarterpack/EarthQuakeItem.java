@@ -5,6 +5,13 @@ public class EarthQuakeItem {
     private String description;
     private String date;
 
+    public EarthQuakeItem(String name, String description, String date){
+        this.name = name;
+        this.description = description;
+        this.date = date;
+    }
+
+    public EarthQuakeItem(){}
     public String getName() {
         return name;
     }
