@@ -1,5 +1,7 @@
 package com.frimpong.earthquakeappstarterpack;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,9 +17,11 @@ import java.util.List;
  class EarthquakeAdapter extends RecyclerView.Adapter<EarthquakeAdapter.EarthquakeViewHolder> {
 
     private List<EarthQuakeItem> earthquakeList;
+    Context context;
 
-    public EarthquakeAdapter(List<EarthQuakeItem> earthquakeList) {
+    public EarthquakeAdapter(List<EarthQuakeItem> earthquakeList, Context context) {
         this.earthquakeList = earthquakeList;
+        this.context = context;
     }
 
     @NonNull
@@ -36,6 +40,12 @@ import java.util.List;
         holder.card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(context, FullView.class);
+                intent.putExtra("name", earthquake.getName());
+                intent.putExtra("date", earthquake.getDate());
+                intent.putExtra("description", earthquake.getDescription());
+                // If you want to pass more info about the item on to the next page, do it here as shown above
+                context.startActivity(intent);
                 System.out.println("Just been clicked here mate!");
             }
         });
