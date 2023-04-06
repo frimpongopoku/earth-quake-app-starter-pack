@@ -1,5 +1,10 @@
 # earth-quake-app-starter-pack
 
+## Whats Done 
+- [X] It loads the content from the internet as the assignment requires 
+- [X] It parses the XML, and shows it in a list as required 
+- [X] Clicking on any of the items takes you to a full view page
+
 ## TODO 
 
 - [ ] Search functionality is not done 
